@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@variant hover (&:hover);
+@layer base {
+    :root {
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+
+        color: #213547;
+        background-color: #ffffff;
+
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+        border-radius: 4px;
+        background-color: transparent;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: #e1e1e1;
+        border-radius: 4px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c1c1c1;
+      }
+      ::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+}
+@theme {
+    --blur-4xs: 0.5px;
+    --blur-3xs: 1px;
+    --blur-2xs: 2px;
+}
+@utility text-outline-black {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}

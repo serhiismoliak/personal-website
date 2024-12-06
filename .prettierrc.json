@@ -1,0 +1,24 @@
+{
+    "semi": false,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "files": "*.test.js",
+            "options": {
+                "semi": true
+            }
+        },
+        {
+            "files": [
+                "*.html",
+                "src/**/*.js",
+                "src/**/*.jsx",
+                "src/**/*.ts",
+                "src/**/*.tsx"
+            ],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
+    <script type="text/javascript">
+      // Redirect to the home page while preserving the path
+      var path = window.location.pathname
+      var newPath = path.replace("/my-site-name/", "")
+      window.location.href = "/index.html#" + newPath
+    </script>
+  </head>
+  <body>
+    <h1>Page Not Found</h1>
+    <p>Redirecting to the home page...</p>
+  </body>
+</html>
