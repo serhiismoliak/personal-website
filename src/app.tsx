@@ -57,7 +57,7 @@ export function App() {
           <Footer />
         </Route>
 
-        <Route>
+        <Route path={"/404"}>
           <main class="flex-1 container mx-auto p-4 max-w-screen-lg">
             <NotFound />
           </main>

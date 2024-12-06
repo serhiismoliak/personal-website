@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/serhiismoliak/personal-website",
+  "homepage": "https://serhiismoliak.github.io/personal-website/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -15,7 +15,8 @@
     "@tailwindcss/vite": "^4.0.0-beta.4",
     "preact": "^10.25.0",
     "tailwindcss": "^4.0.0-beta.4",
-    "wouter": "^3.3.5"
+    "wouter": "^3.3.5",
+    "wouter-preact": "^3.3.5"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.1",
