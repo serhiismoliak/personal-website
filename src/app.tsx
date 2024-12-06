@@ -1,4 +1,4 @@
-import { Route, Switch } from "wouter"
+import { Route, Router } from "wouter"
 import Header from "./layout/header"
 import Footer from "./layout/footer"
 import Biography, { BiographyFull } from "./pages/biography"
@@ -13,7 +13,7 @@ import "./app.css"
 export function App() {
   return (
     <div class="flex flex-col min-h-screen">
-      <Switch >
+      <Router base="personal-website" >
         <Route path="/">
           <Header pagename="Домашня строрінка" />
           <main class="flex-1 container mx-auto p-4 space-y-8 max-w-screen-xl">
@@ -62,7 +62,7 @@ export function App() {
             <NotFound />
           </main>
         </Route>
-      </Switch>
+      </Router>
     </div>
   )
 }
