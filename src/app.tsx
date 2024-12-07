@@ -13,7 +13,7 @@ import "./app.css"
 export function App() {
   return (
     <div class="flex flex-col min-h-screen">
-      <Router base="/personal-website" >
+      <Router>
         <Route path="/">
           <Header pagename="Домашня строрінка" />
           <main class="flex-1 container mx-auto p-4 space-y-8 max-w-screen-xl">

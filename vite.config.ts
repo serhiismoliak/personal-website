@@ -8,5 +8,4 @@ export default defineConfig({
     preact(),
     tailwindcss(),
   ],
-  base: '/personal-website/',
 })
