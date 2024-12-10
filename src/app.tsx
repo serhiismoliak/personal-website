@@ -8,6 +8,7 @@ import InterestingStuff, {
   InterestingStuffFull,
 } from "./pages/interesting-stuff"
 import NotFound from "./pages/not-found"
+import WeatherWidget from "./components/weather-widget"
 import "./app.css"
 
 export function App() {
@@ -17,6 +18,7 @@ export function App() {
         <Route path="/">
           <Header pagename="Домашня строрінка" />
           <main class="flex-1 container mx-auto p-4 space-y-8 max-w-screen-xl">
+            <WeatherWidget/>
             <Biography />
             <MyGroup />
             <Hobbies />

@@ -15,7 +15,7 @@ export default function Header({ pagename }: { pagename: string }) {
         <nav class="relative">
           <button
             onClick={toggleMenu}
-            class="px-4 py-2 rounded-md focus:outline-none bg-gradient-to-br from-cyan-500 to-blue-400 shadow-lg font-semibold"
+            class="px-4 py-2 rounded-md focus:outline-none bg-gradient-to-br from-cyan-500 to-blue-400 shadow-lg font-semibold hover:ring-2 ring-gray-200"
           >
             Меню
           </button>

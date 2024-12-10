@@ -44,6 +44,26 @@
     --blur-4xs: 0.5px;
     --blur-3xs: 1px;
     --blur-2xs: 2px;
+    --animate-jiggle: jiggle 8s ease-in-out infinite;
+
+    @keyframes jiggle {
+      0% {
+        transform: scale(1) rotate(0deg) translateX(0);
+      }
+      25% {
+        transform: scale(1) rotate(-3deg) translateX(5px);
+      }
+      50% {
+        transform: scale(1.1) rotate(0deg) translateX(0);
+        opacity: 0.9;
+      }
+      75% {
+        transform: scale(1) rotate(3deg) translateX(-5px);
+      }
+      100% {
+        transform: scale(1) rotate(0deg) translateX(0);
+      }
+    }
 }
 @utility text-outline-black {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
