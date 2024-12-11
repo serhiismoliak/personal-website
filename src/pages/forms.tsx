@@ -16,14 +16,13 @@ const trimText = (text: string) => text.trim();
 function Forms() {
   const [values, setValues] = useState({
     phone: '',
-    lvivPostaCode: '',
+    lvivPostalCode: '',
     year: '',
     text: '',
   });
-
   const [validations, setValidations] = useState({
     phone: true,
-    lvivPostaCode: true,
+    lvivPostalCode: true,
     year: true,
     text: true,
   });
@@ -35,7 +34,7 @@ function Forms() {
 
   const handleSubmit = () => {
     const isPhoneValid = isValidPhoneNumber(values.phone);
-    const islvivPostalCodeValid = isValidlvivPostalCode(values.lvivPostaCode);
+    const islvivPostalCodeValid = isValidlvivPostalCode(values.lvivPostalCode);
     const isYearValid = isValidYear(values.year);
     const isTextValid = values.text && trimText(values.text) !== '';
     setCleanedText(cleaned);
@@ -44,7 +43,7 @@ function Forms() {
       phone: isPhoneValid,
       lvivPostalCode: islvivPostalCodeValid,
       year: isYearValid,
-      text: isTextValid,
+      text: isTextValid as boolean,
     });
   };
 
@@ -78,23 +77,23 @@ function Forms() {
 
       {/* Lviv Postal Code Input */}
       <div class="mb-4">
-        <label htmlFor="lvivPostaCode" class="block text-gray-700 font-medium mb-2">
+        <label htmlFor="lvivPostalCode" class="block text-gray-700 font-medium mb-2">
           Поштовий індекс Львова (79xxx)
         </label>
         <input
-          id="lvivPostaCode"
-          name="lvivPostaCode"
+          id="lvivPostalCode"
+          name="lvivPostalCode"
           type="text"
-          value={values.lvivPostaCode}
+          value={values.lvivPostalCode}
           onInput={handleChange}
           placeholder="Введіть поштовий індекс Львова"
           class={`w-full p-3 border-2 rounded-lg transition-all focus:outline-none ${
-            validations.lvivPostaCode
+            validations.lvivPostalCode
               ? 'border-gray-300 focus:border-blue-500'
               : 'border-red-500 focus:border-red-500 text-red-500'
           }`}
         />
-        {!validations.lvivPostaCode && (
+        {!validations.lvivPostalCode && (
           <p class="mt-1 text-sm text-red-500">Невірний поштовий індекс Львова.</p>
         )}
       </div>
