@@ -1,14 +1,16 @@
-import { useState } from 'preact/hooks';
+import { fontSize } from '../store/font-size';
 
 const FontSizeButton = () => {
-  const [fontSize, setFontSize] = useState(16);
-
-  const changeFontSize = (newSize: number) => {
-    if (newSize < 8 || newSize > 24) {
-        return
+  const increaseFont = () => {
+    if (fontSize.value < 24) {
+      fontSize.value += 2;
     }
-    document.documentElement.style.fontSize = `${newSize}px`;
-    setFontSize(newSize);
+  };
+
+  const decreaseFont = () => {
+    if (fontSize.value > 8) {
+      fontSize.value -= 2;
+    }
   };
 
   return (
@@ -16,7 +18,7 @@ const FontSizeButton = () => {
       {/* Decrease Font Size Button */}
       <button
         class="flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-400 to-violet-400 text-white hover:brightness-90 transition-all"
-        onClick={() => changeFontSize(fontSize - 2)}
+        onClick={() => decreaseFont()}
       >
        <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +41,7 @@ const FontSizeButton = () => {
       {/* Increase Font Size Button */}
       <button
         class="flex items-center justify-center px-4 py-2 bg-gradient-to-l from-rose-400 to-violet-400 text-white hover:brightness-90 transition-all"
-        onClick={() => changeFontSize(fontSize + 2)}
+        onClick={() => increaseFont()}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
