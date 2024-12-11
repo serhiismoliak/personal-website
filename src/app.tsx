@@ -1,3 +1,4 @@
+import "./app.css"
 import { Route, Router } from "wouter"
 import Header from "./layout/header"
 import Footer from "./layout/footer"
@@ -10,17 +11,17 @@ import InterestingStuff, {
 import NotFound from "./pages/not-found"
 import WeatherWidget from "./components/weather-widget"
 import ContextMenu from "./layout/context-menu"
-import "./app.css"
+import Forms from "./pages/forms"
 
 export function App() {
   return (
     <div class="flex flex-col min-h-screen">
-    <ContextMenu/>
+      <ContextMenu />
       <Router>
         <Route path="/">
           <Header pagename="Домашня строрінка" />
           <main class="flex-1 container mx-auto p-4 space-y-8 max-w-screen-xl">
-            <WeatherWidget/>
+            <WeatherWidget />
             <Biography />
             <MyGroup />
             <Hobbies />
@@ -59,6 +60,12 @@ export function App() {
             <HobbiesFull />
           </main>
           <Footer />
+        </Route>
+
+        <Route path="/forms">
+          <main class="flex-1 container mx-auto p-4 max-w-screen-lg">
+            <Forms />
+          </main>
         </Route>
 
         <Route path={"/404"}>
