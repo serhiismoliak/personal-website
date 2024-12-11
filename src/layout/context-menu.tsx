@@ -4,7 +4,7 @@ import { backgroundColor } from "../store/background-color";
 
 type ActionType = "fontIncrease" | "fontDecrease" | "changeBkg";
 
-const CustomMenu = () => {
+const ContextMenu = () => {
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const menuRef = useRef<HTMLDivElement>(null);
@@ -65,11 +65,14 @@ const CustomMenu = () => {
         showMenu(false, 0, 0); 
       }
     };
+    const handleScroll = () => showMenu(false, 0, 0);
 
+    window.addEventListener("scroll", handleScroll);
     document.body.addEventListener("contextmenu", handleContextMenu);
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       document.body.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -80,7 +83,7 @@ const CustomMenu = () => {
       {visible && (
         <div
           ref={menuRef}
-          class="absolute bg-white text-blue-900 rounded shadow-lg z-[2147483647]"
+          class="fixed bg-white text-blue-900 rounded shadow-lg z-[2147483647]"
           style={{
             width: "250px",
             left: `${position.x}px`,
@@ -106,4 +109,4 @@ const CustomMenu = () => {
   );
 };
 
-export default CustomMenu;
+export default ContextMenu;

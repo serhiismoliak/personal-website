@@ -38,7 +38,7 @@ const WeatherWidget = () => {
   }, []);
 
   return (
-    <div class="max-w-3xl mx-auto p-8 rounded-lg shadow-lg bg-gradient-to-br from-blue-500 to-teal-400 text-white">
+    <div class="max-w-3xl mx-auto p-8 rounded-lg shadow-lg bg-gradient-to-br from-blue-400 to-teal-400 text-white">
       <h3 class="text-4xl font-bold text-center mb-6 md:hidden">Погода надворі</h3>
       {weather ? (
         <div class="md:flex md:items-center">
