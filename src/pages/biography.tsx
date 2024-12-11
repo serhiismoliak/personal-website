@@ -71,7 +71,7 @@ export default function Biography() {
 }
 export function BiographyFull() {
   return (
-    <div class="bg-white rounded w-full flex flex-col gap-8">
+    <div class="rounded w-full flex flex-col gap-8">
       {biographyTexts.map((text, index) => (
         <div
           key={index}

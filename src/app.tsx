@@ -9,11 +9,13 @@ import InterestingStuff, {
 } from "./pages/interesting-stuff"
 import NotFound from "./pages/not-found"
 import WeatherWidget from "./components/weather-widget"
+import CustomMenu from "./layout/custom-menu"
 import "./app.css"
 
 export function App() {
   return (
     <div class="flex flex-col min-h-screen">
+    <CustomMenu/>
       <Router>
         <Route path="/">
           <Header pagename="Домашня строрінка" />
