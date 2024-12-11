@@ -34,7 +34,6 @@ const CustomMenu = () => {
     hideMenu();
   };
 
-  // Change background color
   const changeBkg = () => {
     if (backgroundColor.value === "#ffffff") {
       backgroundColor.value = "#D9EAFD";
@@ -44,7 +43,6 @@ const CustomMenu = () => {
     hideMenu();
   };
 
-  // Action handler
   const handleAction = (action: ActionType) => {
     switch (action) {
       case "fontDecrease":
@@ -56,23 +54,21 @@ const CustomMenu = () => {
     }
   };
 
-  // Global context menu and click event listeners
   useEffect(() => {
     const handleContextMenu = (event: MouseEvent) => {
-      event.preventDefault(); // Prevent default context menu
+      event.preventDefault();
       showMenu(true, event.clientX, event.clientY);
     };
 
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        showMenu(false, 0, 0); // Close menu when clicked outside
+        showMenu(false, 0, 0); 
       }
     };
 
-    document.body.addEventListener("contextmenu", handleContextMenu); // Attach context menu
-    document.addEventListener("mousedown", handleClickOutside); // Close on click outside
+    document.body.addEventListener("contextmenu", handleContextMenu);
+    document.addEventListener("mousedown", handleClickOutside);
 
-    // Clean up listeners on unmount
     return () => {
       document.body.removeEventListener("contextmenu", handleContextMenu);
       document.removeEventListener("mousedown", handleClickOutside);
